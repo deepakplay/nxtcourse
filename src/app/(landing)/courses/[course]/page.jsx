@@ -1,10 +1,11 @@
 'use client';
 import Image from 'next/image';
-import { AiOutlineRead } from "react-icons/ai";
-import { IoMdLock } from "react-icons/io";
+import { useState } from 'react';
+
 import CourseImage from '@/assets/course.webp';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookOpenReader, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const chatpers = [
     {
@@ -168,7 +169,7 @@ const CoursePage = (props) => {
                                                     })}
                                                 >
                                                     <span className='mr-2'>
-                                                        {topic.protected ? <IoMdLock /> : <AiOutlineRead />}
+                                                        <FontAwesomeIcon icon={topic.protected ? faLock : faBookOpenReader} />
                                                     </span>
                                                     {topic.name}
                                                 </button>
